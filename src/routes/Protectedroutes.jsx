@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import Loader from "../Pages/Global/Loader/Loader";
 
-const BASE_URL = "http://localhost:4040";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const ProtectedRoute = () => {
   const [auth, setAuth] = useState(() => {
