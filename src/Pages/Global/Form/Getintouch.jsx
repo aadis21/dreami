@@ -1,18 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Getintouch() {
-  return (
-    // <div className="">
-      <>
+  const [formData, setFormData] = useState({
+    fullname: '',
+    email: '',
+    message: ''
+  });
 
-  <form action="https://fabform.io/f/xxxxx" method="post">
-    <div className="max-w-screen-xl mt-2 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto  text-gray-900 ">
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const sendEmail = () => {
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: formData.fullname,
+        from_email: formData.email,
+        message: formData.message
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+      .then((result) => {
+        console.log('Email sent successfully:', result.text);
+        alert('Message sent successfully!');
+        setFormData({ fullname: '', email: '', message: '' });
+      }, (error) => {
+        console.error('Email sending failed:', error.text);
+        alert('Failed to send message. Please try again.');
+      });
+  };
+
+  return (
+    <div className="max-w-screen-xl mt-2 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto text-gray-900">
       <div className="flex flex-col justify-between">
         <div>
           <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
             Lets talk about everything!
           </h2>
-     
         </div>
         <div className="mt-8 text-center">
           <svg
@@ -972,13 +1000,15 @@ export default function Getintouch() {
           </svg>
         </div>
       </div>
-      <div className="">
+      <div>
         <div>
           <span className="uppercase text-sm text-gray-600 font-bold">
             Full Name
           </span>
           <input
             name="fullname"
+            value={formData.fullname}
+            onChange={handleChange}
             className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
             type="text"
             placeholder=""
@@ -990,8 +1020,10 @@ export default function Getintouch() {
           </span>
           <input
             name="email"
+            value={formData.email}
+            onChange={handleChange}
             className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            type="text"
+            type="email"
           />
         </div>
         <div className="mt-8">
@@ -1000,21 +1032,20 @@ export default function Getintouch() {
           </span>
           <textarea
             name="message"
+            value={formData.message}
+            onChange={handleChange}
             className="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-            defaultValue={""}
           />
         </div>
         <div className="mt-8">
-          <button className="uppercase text-sm font-bold tracking-wide bg-amber-600 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+          <button
+            onClick={sendEmail}
+            className="uppercase text-sm font-bold tracking-wide bg-amber-600 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
+          >
             Send Message
           </button>
         </div>
       </div>
     </div>
-  </form>
-</>
-
-
-
-  )
+  );
 }

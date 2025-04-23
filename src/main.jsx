@@ -6,12 +6,9 @@ import './App.css';
 import App from './App.jsx';
 import '@fontsource/mulish';
 
-
-
-
 const theme = createTheme({
   typography: {
-    fontFamily: 'Molish, sans-serif',
+    fontFamily: 'sans-serif',
   },
 });
 
