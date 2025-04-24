@@ -1,6 +1,7 @@
-import React , {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import aos from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 export default function Verify() {
   useEffect(() => {
@@ -57,7 +58,7 @@ export default function Verify() {
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
             </svg>
           </div>
-          <a href="#" target="_blank">
+          <Link to="/courses" target="_blank">
             <h2 className="mt-4 font-dm-sans text-mobile-h3 font-semibold leading-snug sm:text-mobile-h2 md:text-desktop-h2">
               An
               <span className="font-bold underline underline-offset-2 mx-1">
@@ -65,7 +66,7 @@ export default function Verify() {
               </span>{" "}
               {/* */}rating
             </h2>
-          </a>
+          </Link>
           <p className="mt-4 font-dm-sans text-desktop-paragraph text-slate-body">
             Reviews are from our Students and our clients
           </p>
@@ -107,20 +108,20 @@ export default function Verify() {
           </svg>
         </div>
         <div data-aos="fade-up" className="mt-6 flex flex-col items-center justify-center space-y-3">
-          <a href="#" target="_blank">
+          <Link to="/courses" target="_blank">
             <img
               src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=347156&theme=light&period=daily"
               width={250}
               height={54}
             />
-          </a>
-          <a href="#" target="_blank">
+          </Link>
+          <Link to="/courses" target="_blank">
             <img
               src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=347156&theme=light"
               width={250}
               height={54}
             />
-          </a>
+          </Link>
         </div>
       </div>
 

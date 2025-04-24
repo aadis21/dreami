@@ -8,56 +8,26 @@ import Plyr from 'plyr';
 import 'plyr/dist/plyr.css';
 
 const VideoCarousel = () => {
-  const playersRef = useRef([]);
-
-  // Setup Plyr once
-  useEffect(() => {
-    const players = Array.from(document.querySelectorAll('.js-player')).map(
-      (player) =>
-        new Plyr(player, {
-          // controls: [
-          // controls: [
-          //   'play-large',
-          //   'play',
-          //   'progress',
-          //   'current-time',
-          //   'mute',
-          //   'volume',
-          //   'captions',
-          //   'fullscreen',
-          // ],
-          fullscreen: { enabled: true },
-          resetOnEnd: true,
-          hideControls: false,
-          clickToPlay: true,
-          keyboard: true,
-        })
-    );
-
-    playersRef.current = players;
-
-    return () => {
-      players.forEach((player) => player.destroy());
-    };
-  }, []);
-
 
   const videos = [
     {
       src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
       poster: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
     },
-    // {
-    //   src: 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4',
-    //   poster: 'https://peach.blender.org/wp-content/uploads/title_anouncement.jpg',
-    // },
     {
-      src: 'https://media.w3.org/2010/05/bunny/movie.mp4',
-      poster: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Big_Buck_Bunny_Poster_2008.png/800px-Big_Buck_Bunny_Poster_2008.png',
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+      poster: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
     },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+      poster: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
+    },
+    {
+      src: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+      poster: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
+    },
+
   ];
-
-
 
   // Ensure only the active video plays, others pause/reset
   const handlePlayActiveVideo = () => {
@@ -87,7 +57,7 @@ const VideoCarousel = () => {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         }}
-        pagination={{ clickable: true, el: '.swiper-pagination' }}
+        //pagination={{ clickable: true, el: '.swiper-pagination' }}
         loop={true}
         onSlideChangeTransitionEnd={handlePlayActiveVideo}
         breakpoints={{
@@ -99,25 +69,6 @@ const VideoCarousel = () => {
         }}
         onInit={handlePlayActiveVideo}
       >
-        {/* {[1, 2, 3].map((i) => (
-          <SwiperSlide key={i}>
-            <div className="relative overflow-hidden rounded-lg shadow-lg">
-              <video
-                className="js-player w-full h-auto"
-                playsInline
-                controls
-                muted
-                autoPlay
-                poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
-              >
-                <source
-                  src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-          </SwiperSlide>
-        ))} */}
 
         {videos.map((video, index) => (
           <SwiperSlide key={index}>
@@ -125,7 +76,7 @@ const VideoCarousel = () => {
               <video
                 className="js-player w-full h-auto"
                 playsInline
-                controls
+                // controls
                 muted
                 autoPlay
                 poster={video.poster}
@@ -170,16 +121,15 @@ const VideoCarousel = () => {
           </svg>
         </div>
 
-
-
         {/* <div className="swiper-pagination mt-4"></div> */}
       </Swiper>
 
-      {/* <p className="text-center text-gray-500 text-sm mt-6">
+      <p className="text-center text-gray-500 text-sm mt-6">
         Double-click the video to enter fullscreen mode
-      </p> */}
+      </p>
     </div>
   );
 };
 
 export default VideoCarousel;
+

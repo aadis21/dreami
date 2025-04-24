@@ -1,9 +1,7 @@
-//this for slugs
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import Coursedetails from './CourseDetails/Coursedetails';  // Import your existing Coursedetails component
-
+import Coursedetails from './CourseDetails/Coursedetails'; 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export default function CourseDetailsPage() {
