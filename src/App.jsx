@@ -8,9 +8,6 @@ function App() {
       <Nav />
       <Approutes />
       <Fotter />
-
-
-
     </>
   )
 }

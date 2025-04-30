@@ -8,7 +8,7 @@ const Admissionssection = () => {
         For Admissions & Career Counselling
       </Typography>
       <Typography variant="h3" fontWeight="bold" sx={{ my: 1 }}>
-        TOLL FREE : 18005725501
+        CALL : 62805 46499
       </Typography>
       <Typography variant="body2" color="textSecondary" sx={{ mb: 2 }}>
         If you would like to take a tour of our facilities and experience the atmosphere first-hand through a free demo lesson. <br />
