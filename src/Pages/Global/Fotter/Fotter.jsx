@@ -35,11 +35,11 @@ export default function Footer() {
             <Typography variant="body2" sx={{ mt: 2 }}>Contact us</Typography>
             <Box display="flex" alignItems="center" mt={1}>
               <Phone sx={{ mr: 1 }} />
-              <Typography variant="body2">1800-123-3598</Typography>
+              <Typography variant="body2">6280546499</Typography>
             </Box>
             <Box display="flex" alignItems="center" mt={1}>
               <Email sx={{ mr: 1 }} />
-              <Typography variant="body2">contact@jas.com</Typography>
+              <Typography variant="body2">hello.dreamifys@gmail.com</Typography>
             </Box>
           </Grid>
 
