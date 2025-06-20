@@ -96,12 +96,12 @@ const ContactInfo = () => {
     {
       icon: <LocationOn sx={{ fontSize: 50, color: "orange" }} />,
       title: "Address",
-      details: ["Global IT Park,", "Delhi NH-22, Zirakpur,", "Chandigarh, India"],
+      details: ["107-A office, 1st floor Global Business Park Zirakpur, India"],
     },
     {
       icon: <Email sx={{ fontSize: 50, color: "orange" }} />,
       title: "Email",
-      details: ["Request for Proposal", "@gmail.com"],
+      details: ["Request for Proposal", "hello.dreamifys@gmail.com"],
     },
   ];
 
