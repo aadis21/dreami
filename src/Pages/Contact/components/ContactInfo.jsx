@@ -91,7 +91,7 @@ const ContactInfo = () => {
     {
       icon: <Phone sx={{ fontSize: 50, color: "orange" }} />,
       title: "Phone",
-      details: ["+91 3245 67890", "+91 1234 56789"],
+      details: ["+91 6280546499 ", "+91 76965 65663"],
     },
     {
       icon: <LocationOn sx={{ fontSize: 50, color: "orange" }} />,
